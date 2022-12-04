@@ -213,6 +213,8 @@ def main():
         # столкновение с низом
         if y1 > BOARD_HEIGHT and ANCHOR_Gravity_Down:
             IN_GAME = False
+            dood.reset_doodle()
+            Platform.reset_Platforms()
 
 
 
@@ -243,8 +245,6 @@ def start_game():
 
 def clicked(event):
     global IN_GAME
-    dood.reset_doodle()
-    Platform.reset_Platforms()
     IN_GAME = True
     score.reset()
     c.itemconfigure(restart_text, state='hidden')
