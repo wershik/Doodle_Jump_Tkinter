@@ -109,6 +109,7 @@ class Doodle(object):
 
     def reset_doodle(self):
         c.delete(self.instance)
+        c.delete(img_doodl)
 
 
 class Platform:
@@ -119,8 +120,9 @@ class Platform:
 
     @staticmethod
     def reset_Platforms():
-        for plat in platforms:
-            c.delete(plat.instance)
+        for i in range(len(platforms)):
+            c.delete(platforms[i].instance)
+            c.delete(plat_imgs[i])
 
 
     @staticmethod
@@ -150,11 +152,6 @@ class Platform:
                          x1, y1 + 1.5 * CELL_SIZE,
                          x2, y2 + 1.5 * CELL_SIZE)
                 c.move(plat_imgs[i], 0, 1.5 * CELL_SIZE)
-
-
-
-
-
 
 
 def create_platforms():
